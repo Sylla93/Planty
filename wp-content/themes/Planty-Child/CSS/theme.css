@@ -71,3 +71,14 @@ margin-bottom: 80px;
  width: 350px;
  height: 100px;
  }
+
+ /* ********************************************************* */
+
+ .form {
+   border-radius: 15px;
+
+ }
+ 
+ .envoyer {
+   width: 70px;
+ }
