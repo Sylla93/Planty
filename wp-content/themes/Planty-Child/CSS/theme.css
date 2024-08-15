@@ -17,47 +17,47 @@ body * {
  position: relative;
  height: 100vh;
  width: 260px;
- top: 0px;
- left: 465px;
+ top: 75px;
+ left: 755px;
 margin: 40px;
 margin-top: 0px;
 margin-left: 37px;
 margin-right: 45px;
-margin-bottom: 50px;
+margin-bottom: 105px;
 }
 
 .branche-right {
 position: relative;
 
-height: 550px;
-width: 260px;
+height: 100vh;
+width: 100%;
 top: 0px;
-left: 413px;
+left: 682px;
 margin: 40px;
-margin-top: 0px;
+margin-top: 100px;
 margin-left: 32px;
-margin-right: 50px;
-margin-bottom: 47px;
+margin-right: 80px;
+margin-bottom: 58px;
 }
 
 .can {
-height: 100px;
-width: 71%;
+height: 1307px;
+width: 65%;
 position: relative;
 top: -43px;
-left: -150px;
+left: -245px;
 margin: 50px;
 margin-top: 70px;
 margin-right: 50px;
-margin-bottom: 80px;
+margin-bottom: 0px;
 }
 .branche {
-   height: 800px;
+   height: 100vh;
    display: flex;
    justify-content: center;
    align-items: center;
    left: -400px;
-   margin: 50px;
+   /* margin: 50px; */
    margin-top: 50px;
    margin-right: 50px;
    margin-bottom: 50px;
@@ -65,20 +65,158 @@ margin-bottom: 80px;
  
  .branche img {
  width: 100vh;
- height: 230px;
+ height: 355px;
  }
  .can img {
- width: 350px;
- height: 100px;
+ width: 650px;
+ height: 950px;
  }
+
+
+ /* style pour les tablettes */
+
+ @media (min-width: 768px) and (max-width: 1024px) {
+  /* Styles spécifiques pour les écrans compris entre 768px et 1200px */
+ 
+  .branche-left, .branche-right {
+    flex-direction: column;
+      width: 100%; /* Ajuste la largeur pour les tablettes */
+      height: auto;
+      left: auto; /* Réinitialise la position gauche */
+      margin-left: 60px; /* Ajuste les marges pour les tablettes */
+      margin-right: 20px;
+      
+  }
+
+  .branche {
+    margin-bottom: 65px;
+
+  }
+  
+  .branche img {
+    width: 100vh;
+    height: 200px;
+    }
+
+   .branche-left {
+      width: 400px;
+       height: auto; /*Ajuste la hauteur pour les tablettes */
+       left: 415px;
+   }  
+   .branche-right { 
+       height: auto; /*Ajuste la hauteur pour les tablettes */
+       left: 350px;
+  }
+ 
+  .can {
+    width: 100%;
+    left: -140px;
+  }
+.can img {
+      width: 100px; /* Ajuste la largeur de l'image pour les tablettes */
+      height: auto; /* Maintient le ratio d'aspect */
+  }
+}
+
+
+
+/* Styles pour les mobiles */
+@media (min-width: 320px) and (max-width: 767px) {
+  .container {
+      flex-direction: column; /* Empile les éléments verticalement */
+      height: auto; /* Ajuste la hauteur du conteneur */
+      margin-bottom: 50%;
+  }
+.branche-left, .branche-right {
+      width: 100%; /* Prend toute la largeur disponible */
+      left: auto; /* Réinitialise la position gauche */
+      margin: 40px;
+      margin-left: 0; /* Réinitialise les marges */
+      margin-right: 0;
+      margin-bottom: 50px; /* Réduit les marges pour les mobiles */
+  }
+  .branche-left {
+       height: 350px; /*Ajuste la hauteur pour les mobiles */
+       margin-top: 900px;
+       left: 14px;
+       margin-bottom: -66px;
+
+
+  }
+  .branche-right {
+      height: 450px; /* Ajuste la hauteur pour les mobiles */
+      margin-top: 1050px;
+      margin-bottom: -40px;
+      left: -5px;
+      margin-bottom: -66px;
+
+  }
+
+  .branche img {
+    width: 30vh;
+    height: 100px;
+  }
+
+  .can {
+    width: 800px;
+    height: auto;
+    left: -10px;
+    margin-bottom: 700px;
+
+
+  }
+
+.can img {
+      width: 100vh; /* Prend toute la largeur disponible */
+      height: 500px; /* Maintient le ratio d'aspect */
+  }
+}
 
  /* ********************************************************* */
 
- .form {
-   border-radius: 15px;
 
- }
  
  .envoyer {
    width: 70px;
  }
+
+ .centrer {
+  width: 39px;
+  height: 20px;
+ }
+
+
+ .livraison {
+  height: 800px;
+ }
+ .bouton {
+  width: 180px;
+  height: 180px;
+ }
+
+ .nom {
+  color: #FFFFFF;
+ }
+ .prenom {
+  color: #FFFFFF;
+ }
+ .email {
+  color: #FFFFFF;
+ }
+ .message {
+  color: #FFFFFF;
+ }
+ .separateur {
+  background-color: #FFFFFF;
+  height: 409px;
+ }
+
+
+
+
+ /* ********************** RESPONSIVE**************************** */
+ 
+
+
+
+ 
