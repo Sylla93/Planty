@@ -3,6 +3,31 @@
 body * {
    font-family: 'Roboto', sans-serif;
 }
+/* .centrerAdmin {
+  color: black;
+background-color: blue;  
+padding: 10px;
+  margin: 10px;
+} */
+
+ li {
+  color: black !important;
+  display: inline-block;  
+  margin-right: 20px;     
+}
+.centrerAdmin a{
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;      
+}
+
+.menu-item a {
+  color: black;
+}
+
+
+
+
 
 
 .container {
@@ -21,7 +46,7 @@ body * {
  left: 755px;
 margin: 40px;
 margin-top: 0px;
-margin-left: 37px;
+margin-left: 25px;
 margin-right: 45px;
 margin-bottom: 105px;
 }
@@ -35,8 +60,8 @@ top: 0px;
 left: 682px;
 margin: 40px;
 margin-top: 100px;
-margin-left: 32px;
-margin-right: 80px;
+margin-left: 38px;
+margin-right: 25px;
 margin-bottom: 58px;
 }
 
@@ -48,7 +73,7 @@ top: -43px;
 left: -245px;
 margin: 50px;
 margin-top: 70px;
-margin-right: 50px;
+margin-right: 45px;
 margin-bottom: 0px;
 }
 .branche {
@@ -72,6 +97,9 @@ margin-bottom: 0px;
  height: 950px;
  }
 
+ #commander {
+  height: 1480px;
+ }
 
  /* style pour les tablettes */
 
@@ -187,11 +215,11 @@ margin-bottom: 0px;
 
 
  .livraison {
-  height: 800px;
+  height: 450px;
  }
- .bouton {
+ #bouton {
   width: 180px;
-  height: 180px;
+  height: 200px;
  }
 
  .nom {

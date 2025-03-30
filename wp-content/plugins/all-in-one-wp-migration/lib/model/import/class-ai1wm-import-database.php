@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2023 ServMask Inc.
+ * Copyright (C) 2014-2025 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,6 +14,8 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Attribution: This code is part of the All-in-One WP Migration plugin, developed by
  *
  * ███████╗███████╗██████╗ ██╗   ██╗███╗   ███╗ █████╗ ███████╗██╗  ██╗
  * ██╔════╝██╔════╝██╔══██╗██║   ██║████╗ ████║██╔══██╗██╔════╝██║ ██╔╝
@@ -29,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Ai1wm_Import_Database {
 
-	public static function execute( $params, Ai1wm_Database $db_client = null ) {
+	public static function execute( $params ) {
 		global $wpdb;
 
 		// Skip database import
@@ -811,6 +813,34 @@ class Ai1wm_Import_Database {
 			}
 		}
 
+		// Get WordPress Absolute Path
+		if ( isset( $config['WordPress']['Absolute'] ) && ( $absolute_path = $config['WordPress']['Absolute'] ) ) {
+
+			// Add plain WordPress Absolute
+			if ( ! in_array( $absolute_path, $old_replace_values ) ) {
+				$old_replace_values[] = $absolute_path;
+				$new_replace_values[] = ABSPATH;
+			}
+
+			// Add URL encoded WordPress Absolute
+			if ( ! in_array( urlencode( $absolute_path ), $old_replace_values ) ) {
+				$old_replace_values[] = urlencode( $absolute_path );
+				$new_replace_values[] = urlencode( ABSPATH );
+			}
+
+			// Add URL raw encoded WordPress Absolute
+			if ( ! in_array( rawurlencode( $absolute_path ), $old_replace_values ) ) {
+				$old_replace_values[] = rawurlencode( $absolute_path );
+				$new_replace_values[] = rawurlencode( ABSPATH );
+			}
+
+			// Add JSON escaped WordPress Absolute
+			if ( ! in_array( addcslashes( $absolute_path, '/' ), $old_replace_values ) ) {
+				$old_replace_values[] = addcslashes( $absolute_path, '/' );
+				$new_replace_values[] = addcslashes( ABSPATH, '/' );
+			}
+		}
+
 		// Get WordPress Content Dir
 		if ( isset( $config['WordPress']['Content'] ) && ( $content_dir = $config['WordPress']['Content'] ) ) {
 
@@ -947,9 +977,7 @@ class Ai1wm_Import_Database {
 		$new_table_prefixes[] = ai1wm_table_prefix();
 
 		// Get database client
-		if ( is_null( $db_client ) ) {
-			$db_client = Ai1wm_Database_Utility::create_client();
-		}
+		$db_client = Ai1wm_Database_Utility::create_client();
 
 		// Set database options
 		$db_client->set_old_table_prefixes( $old_table_prefixes )
@@ -984,7 +1012,7 @@ class Ai1wm_Import_Database {
 		if ( $db_client->import( ai1wm_database_path( $params ), $query_offset ) ) {
 
 			// Set progress
-			Ai1wm_Status::info( __( 'Done restoring database.', AI1WM_PLUGIN_NAME ) );
+			Ai1wm_Status::info( __( 'Database restored.', AI1WM_PLUGIN_NAME ) );
 
 			// Unset query offset
 			unset( $params['query_offset'] );

@@ -9,11 +9,13 @@ function theme_enqueue_styles()
 }
 
 function add_items_menu($items, $args) {
-    if ($args->theme_location == 'primary') {
+    
+    
+    if (is_user_logged_in() && $args->menu == 'menu-principal') {
         // Convertit les éléments du menu en tableau
         $menu_items = explode('</li>', $items);
         // Lien Admin à ajouter
-        $admin_link = '<li class="centrerAdmin"><a href="' . admin_url() . '" class="adm">Admin</a></li>';
+        $admin_link = '<li class="centrerAdmin"><a href="' . admin_url() . '" >Admin</a></li>';
         // Position où insérer le lien (après le deuxième élément)
         $position = 1;
         // Insère le lien Admin à la position spécifiée
@@ -28,14 +30,20 @@ function add_items_menu($items, $args) {
     return $items;
 }
 
-add_filter('wp_nav_menu_items', 'add_items_menu', 10, 2);
+ add_filter('wp_nav_menu_items', 'add_items_menu', 10, 2);
+
+   function shortcode_menu_principal() {
+   return wp_nav_menu(array('menu' => 'menu-principal', 'echo' => false));
+ }
+
+add_shortcode('menu_principal', 'shortcode_menu_principal');
 
 
 // if (is_user_logged_in() && $args->theme_location == 'primary') {
        
 //     $menu_items = explode('</li>', $items);
     
-//     $admin_link = '<li><a href="' . admin_url() . '">Admin</a></li>';
+//     $admin_link = '<li><a href="' . admin_url() . '">Admin</a></li>';menu-principal
   
 //     $position = 2;
    

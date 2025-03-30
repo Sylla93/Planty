@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2023 ServMask Inc.
+ * Copyright (C) 2014-2025 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,6 +14,8 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Attribution: This code is part of the All-in-One WP Migration plugin, developed by
  *
  * ███████╗███████╗██████╗ ██╗   ██╗███╗   ███╗ █████╗ ███████╗██╗  ██╗
  * ██╔════╝██╔════╝██╔══██╗██║   ██║████╗ ████║██╔══██╗██╔════╝██║ ██╔╝
@@ -29,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Ai1wm_Export_Enumerate_Tables {
 
-	public static function execute( $params, Ai1wm_Database $db_client = null ) {
+	public static function execute( $params ) {
 		// Set exclude database
 		if ( isset( $params['options']['no_database'] ) ) {
 			return $params;
@@ -43,19 +45,17 @@ class Ai1wm_Export_Enumerate_Tables {
 		}
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Retrieving a list of WordPress database tables...', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Gathering database tables...', AI1WM_PLUGIN_NAME ) );
 
 		// Get database client
-		if ( is_null( $db_client ) ) {
-			$db_client = Ai1wm_Database_Utility::create_client();
-		}
+		$db_client = Ai1wm_Database_Utility::create_client();
 
 		// Include table prefixes
 		if ( ai1wm_table_prefix() ) {
 			$db_client->add_table_prefix_filter( ai1wm_table_prefix() );
 
-			// Include table prefixes (Webba Booking)
-			foreach ( array( 'wbk_services', 'wbk_days_on_off', 'wbk_locked_time_slots', 'wbk_appointments', 'wbk_cancelled_appointments', 'wbk_email_templates', 'wbk_service_categories', 'wbk_gg_calendars', 'wbk_coupons' ) as $table_name ) {
+			// Include table prefixes (Webba Booking and CiviCRM)
+			foreach ( array( 'wbk_', 'civicrm_' ) as $table_name ) {
 				$db_client->add_table_prefix_filter( $table_name );
 			}
 		}
@@ -77,7 +77,7 @@ class Ai1wm_Export_Enumerate_Tables {
 		}
 
 		// Set progress
-		Ai1wm_Status::info( __( 'Done retrieving a list of WordPress database tables.', AI1WM_PLUGIN_NAME ) );
+		Ai1wm_Status::info( __( 'Database tables gathered.', AI1WM_PLUGIN_NAME ) );
 
 		// Set total tables count
 		$params['total_tables_count'] = $total_tables_count;
