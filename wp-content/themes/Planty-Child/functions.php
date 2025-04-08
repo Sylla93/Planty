@@ -39,21 +39,6 @@ function add_items_menu($items, $args) {
 add_shortcode('menu_principal', 'shortcode_menu_principal');
 
 
-// if (is_user_logged_in() && $args->theme_location == 'primary') {
-       
-//     $menu_items = explode('</li>', $items);
-    
-//     $admin_link = '<li><a href="' . admin_url() . '">Admin</a></li>';menu-principal
-  
-//     $position = 2;
-   
-//     array_splice($menu_items, $position, 0, $admin_link);
-    
-//     $items = implode('</li>', $menu_items);
-// }
-// return $items;
-
-
 
 function planty_canette() {
     ob_start(); ?>

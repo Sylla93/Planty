@@ -43,21 +43,21 @@ padding: 10px;
  height: 100vh;
  width: 260px;
  top: 75px;
- left: 755px;
+ left: 450px;
 margin: 40px;
 margin-top: 0px;
 margin-left: 25px;
 margin-right: 45px;
-margin-bottom: 105px;
+margin-bottom: 125px;
 }
 
 .branche-right {
 position: relative;
 
-height: 100vh;
+height: 80vh;
 width: 100%;
-top: 0px;
-left: 682px;
+top: 10px;
+left: 382px;
 margin: 40px;
 margin-top: 100px;
 margin-left: 38px;
@@ -66,18 +66,18 @@ margin-bottom: 58px;
 }
 
 .can {
-height: 1307px;
+height: 800px;
 width: 65%;
 position: relative;
-top: -43px;
-left: -245px;
+top: 55px;
+left: -150px;
 margin: 50px;
 margin-top: 70px;
 margin-right: 45px;
 margin-bottom: 0px;
 }
 .branche {
-   height: 100vh;
+   height: 50vh;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -94,7 +94,7 @@ margin-bottom: 0px;
  }
  .can img {
  width: 650px;
- height: 950px;
+ height: 100px;
  }
 
  #commander {
