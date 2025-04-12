@@ -50,7 +50,7 @@ function planty_canette() {
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/canette.png" alt="Planty Energy Drink" class="can">
     </div>
     <?php return ob_get_clean();
-}
+ }
 add_shortcode('planty_display_canette', 'planty_canette');
 
 // ***************************************************************************************************
@@ -58,7 +58,7 @@ add_shortcode('planty_display_canette', 'planty_canette');
 function planty_fraise() {
     ob_start(); ?>
     <div class= "case_fraise">
-        <input <?php echo get_stylesheet_directory_uri(); ?> type="number" class="centrer" name="montant" min="0" step="0.01" required>
+        <input <?php echo get_stylesheet_directory_uri(); ?> type="number"  class="centrer" name="montant" value="0" min="0" step="0.01" required>
     </div>
     <?php return ob_get_clean();
 

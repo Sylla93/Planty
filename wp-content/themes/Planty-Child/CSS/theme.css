@@ -23,6 +23,13 @@ padding: 10px;
 
 .menu-item a {
   color: black;
+  font-weight: 450;
+}
+.centrerAdmin:hover {
+  color: black;
+  font-weight:450;/* Mettre le texte en gras */
+  transform: translate(5%, -5% ); /* Décalage de 5% à droite et 2% vers le haut */
+   
 }
 
 
@@ -224,6 +231,7 @@ margin-bottom: 0px;
 
  .nom {
   color: #FFFFFF;
+  
  }
  .prenom {
   color: #FFFFFF;
@@ -239,6 +247,14 @@ margin-bottom: 0px;
   height: 409px;
  }
 
+ .wpcf7-form-control-wrap input {
+  height: 80px;
+  border-radius: 7px;
+ }
+textarea {
+  height: 235px ;
+  border-radius: 7px;
+}
 
 
 
