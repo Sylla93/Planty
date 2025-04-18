@@ -40,19 +40,6 @@ add_shortcode('menu_principal', 'shortcode_menu_principal');
 
 
 
-function planty_canette() {
-    ob_start(); ?>
-        <div class="container">
-            <ul class="branche">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/gauche.png" alt="Gauche branches" class="branche-left" >
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/droite.png" alt="Droite branches" class="branche-right">
-            </ul>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/canette.png" alt="Planty Energy Drink" class="can">
-    </div>
-    <?php return ob_get_clean();
- }
-add_shortcode('planty_display_canette', 'planty_canette');
-
 // ***************************************************************************************************
 
 function planty_fraise() {
