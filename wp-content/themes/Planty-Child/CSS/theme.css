@@ -33,6 +33,21 @@ padding: 10px;
 }
 
 
+.wpcf7-form input[type="submit"] {
+  display: block;
+  margin: 0 auto; /* Centre le bouton */
+  background-color:  #E0B9B4;
+  text-decoration: none;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  background-color: #C02E44;
+  text-decoration: none;
+}
+
+
+
+
 
 
 
