@@ -125,7 +125,7 @@ margin-bottom: 0px;
 
  /* style pour les tablettes */
 
- @media (min-width: 768px) and (max-width: 1024px) {
+ @media (min-width: 768px) and (max-width: 1524px) {
   /* Styles spécifiques pour les écrans compris entre 768px et 1200px */
  
   .branche-left, .branche-right {
@@ -137,6 +137,7 @@ margin-bottom: 0px;
       margin-right: 20px;
       
   }
+ 
 
   .branche {
     margin-bottom: 65px;
@@ -220,6 +221,12 @@ margin-bottom: 0px;
       width: 100vh; /* Prend toute la largeur disponible */
       height: 500px; /* Maintient le ratio d'aspect */
   }
+.menu-item {
+  flex-direction: column; /* Empile les éléments verticalement */
+      height: auto; /* Ajuste la hauteur du conteneur */
+      color: aqua;
+}
+
 }
 
  /* ********************************************************* */
