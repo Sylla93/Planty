@@ -123,6 +123,28 @@ margin-bottom: 0px;
   height: 1480px;
  }
 
+
+ .menu .elementor-widget-container .menuResponsive{
+  /* display: none; Cache le menu par défaut */
+  flex-direction:row; /* Menu en colonne */
+  width: auto;
+  height: auto;
+  background-color: #333; /* Fond du menu */
+    position: absolute; /*Position ou menu déroulant */
+  top: 60px; /* Ajuster selon la hauteur de l'en-tête */
+  left: 0;
+  word-spacing: 2px;
+  
+}
+.menu-item {
+
+  white-space: nowrap; /* Empêche le pliage des liens du menu */
+  margin-right: 5px;
+}
+
+
+ /* **********************     Responsive ********************************* */
+
  /* style pour les tablettes */
 
  @media (min-width: 768px) and (max-width: 1524px) {
@@ -138,6 +160,19 @@ margin-bottom: 0px;
       
   }
  
+
+  
+  .menu-item li {
+    margin-left: 20px; /* Ajoute de l'espace entre les éléments */
+    flex: 0 1 auto; /* Permet aux éléments de conserver leur taille tout en s'ajustant */
+}
+
+  .elementor-element .menuResponsive {
+  margin: 10px 0; /* Ajuste l'espacement vertical */
+  overflow: hidden; /* Cache tout débordement */
+}
+
+}
 
   .branche {
     margin-bottom: 65px;
@@ -167,7 +202,9 @@ margin-bottom: 0px;
       width: 100px; /* Ajuste la largeur de l'image pour les tablettes */
       height: auto; /* Maintient le ratio d'aspect */
   }
-}
+
+
+
 
 
 
